@@ -155,13 +155,13 @@
   letter-spacing: 0px;
   font-size: 1.25rem;
   line-height: 2;
-  margin: 32px 0 0;
+  margin: 41px 0 0;
 }
 
 .u-section-3 .u-image-1 {
   width: 510px;
   height: 213px;
-  margin: -163px auto 0;
+  margin: -332px auto 0;
 }
 
 .u-section-3 .u-image-2 {
@@ -176,7 +176,7 @@
 
 .u-section-3 .u-text-4 {
   text-align: left;
-  margin: 988px 0 696px;
+  margin: 988px 0 864px;
 }
 
 @media (max-width: 1199px) {
@@ -186,10 +186,6 @@
 
   .u-section-3 .u-text-1 {
     margin-top: 51px;
-  }
-
-  .u-section-3 .u-text-2 {
-    margin-top: 41px;
   }
 
   .u-section-3 .u-image-1 {

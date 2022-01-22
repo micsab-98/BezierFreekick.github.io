@@ -95,7 +95,7 @@
           <br>
           <br>Mentre le curve di Bezier di grado 1 sono in realtà segmenti orientati, le curve di Bezier di grado 2 vengono anche definite curve quadratiche e sono composte da 3 punti dello spazio affine. Tramite tali punti è possibile costruire la curva utilizzando l'interpolazione lineare, definita dalla seguente funzione:<br>
           <br>
-          <span style="font-weight: 700;">B(t) = P<span style="font-size: 0.875rem;">0</span>&nbsp;+ t(P<span style="font-size: 0.875rem;">1</span>&nbsp;– P<span style="font-size: 0.875rem;">0</span>)&nbsp; , &nbsp;0&nbsp;<u>&lt;</u>&nbsp;t&nbsp;<u>&lt;</u>&nbsp;1
+          <span style="font-weight: 700;">P(t) = P<span style="font-size: 0.875rem;">0</span>&nbsp;+ t(P<span style="font-size: 0.875rem;">1</span>&nbsp;– P<span style="font-size: 0.875rem;">0</span>)&nbsp; , &nbsp;0&nbsp;<u>&lt;</u>&nbsp;t&nbsp;<u>&lt;</u>&nbsp;1
           </span>
           <br>
           <br>
@@ -117,8 +117,11 @@
           <br>Quando t si muove tramite i punti ottenuti, descrive una curva dove nel punto P<span style="font-size: 0.875rem;">0</span>
           <span style="font-weight: 400; font-size: 1.125rem;">2</span>(t) la retta è tangete al punto.<br>Si pu scrivere l'espressione analitica della funzione P<span style="font-size: 0.875rem;">0</span>
           <span style="font-size: 1.125rem;">2</span>(t) (cioè la curva di Bezier) in dipendenza semplicemente dalle coordinate di partenza, cioè dai punti del poligono di controllo.<br>
-          <br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
+          <br><b>Formula con polinomi di Bernstein</b>
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
           <br>Il fatto che il supporto delle curve sia contenuto nell'involucro convesso ci dice che le curve di grado 2 hanno in realtà il supporto contenuto in un piano (se P<span style="font-size: 0.875rem;">0</span>, P<span style="font-size: 0.875rem;">1</span> e P<span style="font-size: 0.875rem;">2</span> sono in posizione generale). Quindi la torsione è sempre nulla.<br>
+          <br>
+          <br>
           <br>
           <span style="font-weight: 700;">Ogni curva di Bezier di grado 2 è in realtà un arco di parabola.</span>
           <br>
@@ -153,7 +156,7 @@
     <section class="u-align-left u-clearfix u-section-4" id="carousel_ac91">
       <div class="u-clearfix u-sheet u-sheet-1">
         <blockquote class="u-border-20 u-custom-font u-font-montserrat u-text u-text-default u-text-1">sUPERFICI DI BEZIER</blockquote>
-        <p class="u-custom-font u-font-montserrat u-text u-text-2"> Le&nbsp;superfici di Bezier&nbsp;sono l'estensione tridimensionale della teoria soggiacente le curve di Bezier. Dato un poliedro di controllo, è possibile definire ogni punto della superficie contenuta nel poliedro convesso tramite la risoluzione di una funzione in due variabili, solitamente u e v.<br>
+        <p class="u-custom-font u-font-montserrat u-text u-text-2"> Le&nbsp;superfici di Bezier&nbsp;sono l'estensione&nbsp; della teoria soggiacente le curve di Bezier. Dato un poliedro di controllo, è possibile definire ogni punto della superficie contenuta nel poliedro convesso tramite la risoluzione di una funzione in due variabili, solitamente u e v.<br>
           <br>
           <br>
           <br>
