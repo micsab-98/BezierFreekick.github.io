@@ -3,7 +3,7 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 1000px;
+  min-height: 550px;
 }
 
 .u-section-1 .u-text-1 {
@@ -12,5 +12,7 @@
   font-style: normal;
   text-transform: uppercase;
   background-image: none;
-  margin: 60px auto 60px -19px;
+  margin: 60px auto 0 -19px;
+}.u-section-2 .u-sheet-1 {
+  min-height: 500px;
 }

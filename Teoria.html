@@ -76,33 +76,34 @@
     <section class="u-align-left u-clearfix u-section-2" id="carousel_d95f">
       <div class="u-clearfix u-sheet u-sheet-1">
         <blockquote class="u-border-20 u-border-palette-4-base u-custom-font u-font-montserrat u-text u-text-default u-text-1">Introduzione</blockquote>
-        <p class="u-custom-font u-font-montserrat u-text u-text-2">La traiettoria del tiro è stata sviluppata sfruttando l'algoritmo di De Casteljau, costruendo una curva di <span style="font-weight: 700;">Bezier di grado k = 2</span> in cui P<span style="font-size: 0.875rem;">0</span> è il punto nello spazio in cui si trova il pallone prima di essere calciato, P<span style="font-size: 0.875rem;">1</span> è la posizione della sfera trasparente che può essere spostata dal giocatore e P<span style="font-size: 0.875rem;">3</span> è l'ultimo punto nello spazio evidenziato dalla traiettoria visibile.<br>
+        <p class="u-custom-font u-font-montserrat u-text u-text-2">
+          <br>La traiettoria del tiro è stata sviluppata sfruttando <span style="font-weight: 700;">l'algoritmo di De Casteljau</span>, costruendo una curva di <span style="font-weight: 700;">Bezier di grado k = 2</span> in cui P<span style="font-size: 0.875rem;">0</span> è il punto nello spazio in cui si trova il pallone prima di essere calciato, P<span style="font-size: 0.875rem;">1</span> è la posizione della sfera trasparente che può essere spostata dal giocatore e P<span style="font-size: 0.875rem;">3</span> è l'ultimo punto nello spazio evidenziato dalla traiettoria visibile.<br>
           <br>
           <span style="font-weight: 700;">La rete della porta è una superficie di Bezier <span style="font-weight: 400;">sviluppata</span>
           </span>
           <span style="font-weight: 400;">&nbsp;</span>mediamente l'algoritmo di costruzione di tali superfici.<br>
-          <br>E' stato sviluppato un meccanismo di interazione tra il pallone e la rete sfruttando i punti del poliedro di controllo della superficie di Bezier. Quando il pallone collide con la rete interagisce con uno dei 25 punti di controllo, a questi è collegata un' animazione che viene attivata nel momento della collisione e simula un movimento realistico dell'oscillazione della rete.
+          <br>E' stato sviluppato un meccanismo di interazione tra il pallone e la rete sfruttando i punti del poliedro di controllo della superficie di Bezier. Quando il pallone collide con la rete interagisce con uno dei 25 punti di controllo, a questi è collegata un' animazione che viene attivata nel momento della collisione e simula un movimento realistico dell'oscillazione della rete.<br>
+          <br>
         </p>
       </div>
     </section>
     <section class="u-align-left u-clearfix u-section-3" id="carousel_fd65">
       <div class="u-clearfix u-sheet u-sheet-1">
         <blockquote class="u-border-20 u-border-palette-2-base u-custom-font u-font-montserrat u-text u-text-default u-text-1">cURVE DI BEZIER</blockquote>
-        <p class="u-custom-font u-font-montserrat u-text u-text-2">Le curve di Bezier sono curve parametriche ideate dal fisico De Casteljau nel 1959 e largamente utilizzate&nbsp;<br>dall' ingegnere Pierre Bézier nel 1962 per disegnare le carrozzerie delle automobili.&nbsp;<br>
-          <br>Sono curve definite nell'intervallo 0,1 dell'asse delle t in cui la&nbsp;cui la funzione P(t), quindi la sua x, y e z sono funzioni polinomiali dello stesso grado k. Ogni curva di Bezier dipende dalla posizione di alcuni punti del piano (per curve piane) o dello spazio (per curve spaziali) che costituiscono il poligono di controllo, il quale non è propriamente un poligono ma un insieme di punti che determinano in maniera univoca la curva. Il numero di punti dipende dal grado k desiderato. Il poligono di controllo, per un curva di grado k, è individuato da k+1 punti.<br>
-          <br>Per costruire un poligono di controllo bisogna garantire 2 regole:<br>
+        <p class="u-custom-font u-font-montserrat u-text u-text-2">
+          <br>Le curve di Bezier sono curve parametriche ideate dal fisico De Casteljau nel 1959 e largamente utilizzate&nbsp;<br>dall' ingegnere Pierre Bézier nel 1962 per disegnare le carrozzerie delle automobili.&nbsp;<br>
+          <br>Sono curve definite nell'intervallo 0,1 dell'asse delle <span style="font-style: italic;">t</span> in cui la&nbsp;cui la funzione P(<span style="font-style: italic;">t</span>), quindi la sua x, y e z sono funzioni polinomiali dello stesso grado k. Ogni curva di Bezier dipende dalla posizione di alcuni punti del piano (per curve piane) o dello spazio (per curve spaziali) che costituiscono il poligono di controllo, il quale non è propriamente un poligono ma un insieme di punti che determinano in maniera univoca la curva. Il numero di punti dipende dal grado k desiderato. Il poligono di controllo, per un curva di grado k, è individuato da k+1 punti.<br>
+          <br>Per costruire un poligono di controllo bisogna garantire 2 condizioni:<br>
           <br>
           <br>
-          <br>Mentre le curve di Bezier di grado 1 sono in realtà segmenti orientati, le curve di Bezier di grado 2 vengono anche definite curve quadratiche e sono composte da 3 punti dello spazio affine. Tramite tali punti è possibile costruire la curva utilizzando l'interpolazione lineare, definita dalla seguente funzione:<br>
+          <br>Mentre <span style="font-weight: 700;">le curve di Bezier di grado 1 sono in realtà segmenti orientati</span>, le curve di Bezier di grado 2 vengono anche definite <span style="font-weight: 700;">curve quadratiche</span> e sono composte da 3 punti dello spazio affine. Tramite tali punti è possibile costruire la curva utilizzando l'interpolazione lineare, definita dalla seguente funzione:<br>
           <br>
-          <span style="font-weight: 700;">P(t) = P<span style="font-size: 0.875rem;">0</span>&nbsp;+ t(P<span style="font-size: 0.875rem;">1</span>&nbsp;– P<span style="font-size: 0.875rem;">0</span>)&nbsp; , &nbsp;0&nbsp;<u>&lt;</u>&nbsp;t&nbsp;<u>&lt;</u>&nbsp;1
-          </span>
           <br>
           <br>
           <span style="font-weight: 700; font-size: 1.875rem;">Algoritmo di De Castlejau</span>
           <br>
-          <br>L'algoritmo di De Casteljau ci permette di definire una curva di Bezier, sviluppando una costruzione&nbsp;attraverso ripetute interpolazioni lineari. Fissato un valore del parametro t ∈ (0,1), fra ogni coppia dei punti di controllo consecutivi viene fatta una interpolazione lineare in funzione del parametro t, ottenendo un nuovo punto della curva.<br>
-          <br>L'algoritmo viene descritto tramite un diagramma triangolare a 3 livelli.<br>
+          <br>L'algoritmo di De Casteljau ci permette di definire una curva di Bezier, sviluppando una costruzione&nbsp;attraverso ripetute interpolazioni lineari. Fissato un valore del parametro <span style="font-style: italic;">t</span> ∈ (0,1), fra ogni coppia dei punti di controllo consecutivi viene eseguita un' interpolazione lineare in funzione del parametro <span style="font-style: italic;">t</span>, ottenendo un nuovo punto della curva.<br>
+          <br>L'algoritmo viene descritto tramite un <span style="font-weight: 700;">diagramma triangolare a 3 livelli</span>.<br>
           <br>
           <br>
           <br>
@@ -114,14 +115,17 @@
           <br>
           <br>
           <br>
-          <br>Quando t si muove tramite i punti ottenuti, descrive una curva dove nel punto P<span style="font-size: 0.875rem;">0</span>
-          <span style="font-weight: 400; font-size: 1.125rem;">2</span>(t) la retta è tangete al punto.<br>Si pu scrivere l'espressione analitica della funzione P<span style="font-size: 0.875rem;">0</span>
-          <span style="font-size: 1.125rem;">2</span>(t) (cioè la curva di Bezier) in dipendenza semplicemente dalle coordinate di partenza, cioè dai punti del poligono di controllo.<br>
-          <br><b>Formula con polinomi di Bernstein</b>
-          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
+          <br>Quando <span style="font-style: italic;">t</span> si muove tramite i punti ottenuti, descrive una curva dove nel punto P<span style="font-size: 0.875rem;">0</span>
+          <span style="font-weight: 400; font-size: 1.125rem;">
+            <span style="font-size: 1.25rem;">²</span>
+          </span>(<span style="font-style: italic;">t</span>) la retta è tangete al punto.<br>Si può scrivere l'espressione analitica della funzione P<span style="font-size: 0.875rem;">0</span>
+          <span style="font-size: 1.125rem;">
+            <span style="font-size: 1.25rem;">²</span>
+          </span>(<span style="font-style: italic;">t</span>) (cioè la curva di Bezier) in dipendenza semplicemente dalle coordinate di partenza, cioè dai punti del poligono di controllo.&nbsp;<br>Questo meccanismo utilizza i <span style="font-weight: 700;">polinomi di Bernstein</span>.<br>
+          <br>
+          <br>
+          <span style="font-weight: 400;"></span>&nbsp; &nbsp; &nbsp;<br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
           <br>Il fatto che il supporto delle curve sia contenuto nell'involucro convesso ci dice che le curve di grado 2 hanno in realtà il supporto contenuto in un piano (se P<span style="font-size: 0.875rem;">0</span>, P<span style="font-size: 0.875rem;">1</span> e P<span style="font-size: 0.875rem;">2</span> sono in posizione generale). Quindi la torsione è sempre nulla.<br>
-          <br>
-          <br>
           <br>
           <span style="font-weight: 700;">Ogni curva di Bezier di grado 2 è in realtà un arco di parabola.</span>
           <br>
@@ -133,13 +137,13 @@
           <br>
         </p>
         <img class="u-image u-image-default u-image-1" src="images/Bzier_2_big.gif" alt="" data-image-width="360" data-image-height="150">
-        <img class="u-image u-image-default u-image-2" src="images/The-first-de-Casteljau-evaluation-algorithm-for-a-cubic-p-q-Bezier-curve-on-the.png" alt="" data-image-width="977" data-image-height="536">
+        <img class="u-expanded-width-xs u-image u-image-default u-image-2" src="images/The-first-de-Casteljau-evaluation-algorithm-for-a-cubic-p-q-Bezier-curve-on-the.png" alt="" data-image-width="977" data-image-height="536">
         <ul class="u-custom-font u-font-montserrat u-text u-text-3">
           <li>
             <span style="font-size: 1.25rem;">I punti del poligono di controllo devono essere tutti distinti;</span>
           </li>
           <li>
-            <span style="font-size: 20px;">L'ordine di disposizione dei punti del poligono di controllo ha importanza nella costruzione della curva</span>
+            <span style="font-size: 20px;">l'ordine di disposizione dei punti del poligono di controllo ha importanza nella costruzione della curva.</span>
           </li>
         </ul>
         <ul class="u-custom-font u-font-montserrat u-text u-text-4">
@@ -148,15 +152,21 @@
             </span>
           </li>
           <li>
-            <span style="font-size: 20px;">Fissato un rapporto semplice (scegliendo un valore di t tra 0 e 1), i punti ottenuti nei segmenti realizzano lo stesso rapporto semplice.</span>
+            <span style="font-size: 20px;">Fissato un rapporto semplice (scegliendo un valore di <span style="font-style: italic;">t</span> tra 0 e 1), i punti ottenuti nei segmenti realizzano lo stesso rapporto semplice.
+            </span>
           </li>
         </ul>
+        <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/CodeCogsEqn21.png" alt="" data-image-width="395" data-image-height="141">
+        <img class="u-expanded-width-xs u-image u-image-default u-preserve-proportions u-image-4" src="images/CodeCogsEqn9.png" alt="" data-image-width="771" data-image-height="50">
       </div>
     </section>
     <section class="u-align-left u-clearfix u-section-4" id="carousel_ac91">
       <div class="u-clearfix u-sheet u-sheet-1">
         <blockquote class="u-border-20 u-custom-font u-font-montserrat u-text u-text-default u-text-1">sUPERFICI DI BEZIER</blockquote>
-        <p class="u-custom-font u-font-montserrat u-text u-text-2"> Le&nbsp;superfici di Bezier&nbsp;sono l'estensione&nbsp; della teoria soggiacente le curve di Bezier. Dato un poliedro di controllo, è possibile definire ogni punto della superficie contenuta nel poliedro convesso tramite la risoluzione di una funzione in due variabili, solitamente u e v.<br>
+        <p class="u-custom-font u-font-montserrat u-text u-text-2">
+          <br>Le&nbsp;superfici di Bezier&nbsp;sono sono state utilizzate per la prima volta dall'ingegnere francese Pierre Bézier nel 1962 per progettare carrozzerie di automobili.<br>
+          <br>
+          <span style="font-weight: 700;">Sono l'estensione tridimensionale delle curve di Bezier</span>. Dato un poliedro di controllo, è possibile definire ogni punto della superficie contenuta nel poliedro convesso tramite una funzione a due variabili (<span style="font-style: italic;">u</span>,&nbsp;<span style="font-style: italic;">v)</span>.<br>
           <br>
           <br>
           <br>
@@ -166,12 +176,48 @@
           <br>
           <br>
           <br>
+          <br>Una superficie di Bezier di bigrado (<span style="font-style: italic;">n</span>, <span style="font-style: italic;">m</span>) può essere definita come una <span style="font-weight: 700;">superficie parametrica</span> dove la posizione del punto <span style="font-style: italic;">p</span> è data dalla funzione:<br>
           <br>
           <br>
+          <br>La funzione sopra descritta sfrutta i&nbsp;polinomi di Bernstein&nbsp;per ottenere il "peso" dei punti del poliedro di controllo.<br>Tale funzione è definita sul quadrato unitario del piano <span style="font-style: italic;">uv</span>
           <br>
-          <br>La funzione sopra descritta sfrutta i&nbsp;polinomi di Bernstein&nbsp;per pesare i punti del poliedro di controllo.La trasformazione della superficie di Bezier è attuabile applicando la trasformazione stessa al poliedro di controllo. L'algoritmo di animazione agirà dunque sui punti del poliedro di controllo ed il motore di rendering mostrerà a video come queste variazioni agiscano sulla superficie.Dal punto di vista computazionale le superfici di Bezier risultano complesse e la complessità cresce in maniera elevata con il variare del passo di valutazione.Il vantaggio di questo tipo di rappresentazione grafica è la continuità di grado C due che rende le superfici visivamente "morbide".<br>
+          <br>
+          <br>Una superficie di Bezier può essere quindi descritta mediante un poliedro di controllo, a cui appartengono (<span style="font-style: italic;">n</span>+1)⋅(<span style="font-style: italic;">m</span>+1)&nbsp;punti, esprimibili nella forma generica&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; con&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+          <br>La coppia (<span style="font-style: italic;">n</span>,<span style="font-style: italic;">m</span>) è detta bigrado della superifice di Bezier.&nbsp;<br>
+          <br>Dal punto di vista computazionale la complessità delle superfici di Bezier cresce in maniera elevata con il variare del passo di valutazione. Superfici di bigrado alto possono infatti risultare pesanti e influire sulle performance del computer.<br>
+          <br>Le superfici di Bezier hanno diversi vantaggi:<br>
         </p>
-        <img class="u-image u-image-default u-image-1" src="images/M30h7.png" alt="" data-image-width="427" data-image-height="420">
+        <img class="u-expanded-width-xs u-image u-image-default u-image-1" src="images/M30h7.png" alt="" data-image-width="427" data-image-height="420">
+        <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/CodeCogsEqn4.png" alt="" data-image-width="569" data-image-height="62">
+        <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/CodeCogsEqn6.png" alt="" data-image-width="200" data-image-height="40">
+        <img class="u-image u-image-default u-preserve-proportions u-image-4" src="images/CodeCogsEqn8.png" alt="" data-image-width="115" data-image-height="63">
+        <img class="u-expanded-width-xs u-image u-image-default u-preserve-proportions u-image-5" src="images/CodeCogsEqn10.png" alt="" data-image-width="694" data-image-height="150">
+        <img class="u-image u-image-default u-preserve-proportions u-image-6" src="images/CodeCogsEqn72.png" alt="" data-image-width="220" data-image-height="44">
+        <ul class="u-custom-font u-font-montserrat u-text u-text-3">
+          <li>
+            <span style="font-size: 1.25rem;"></span>
+            <span style="font-size: 1.25rem;"></span>
+            <span style="font-size: 1.25rem;">se si desidera trasformare una superficie di Bezier mediante un’affinità, è possibile trasformare i soli punti del poliedro di controllo per ottenere una trasformazione (questa azione non permette un vero controllo locale e porta a ricalcolare l'intera superficie);</span>
+          </li>
+          <li>
+            <span style="font-size: 20px;"> l’intera superficie di Bezier è contenuta nell’involucro convesso individuato dai punti del poliedro di controllo;</span>
+          </li>
+          <li>
+            <span style="font-size: 20px;">è possibile suddividere la superficie in più superfici di dimensioni minori;<br>
+            </span>
+          </li>
+          <li>
+            <span style="font-size: 20px;">se tutti i punti del poliedro di controllo sono complanari ed equamente distanziati lungo le direzioni corrispondenti al crescere di&nbsp;<span style="font-style: italic;">m</span>&nbsp;e&nbsp;<span style="font-style: italic;">n</span>, la superficie non è altro che una porzione di piano;<br>
+            </span>
+          </li>
+          <li>
+            <span style="font-size: 1.25rem;">i punti del poliedro di controllo corrispondenti agli angoli del quadrato unitario deformato coincidono con quattro dei punti di controllo;</span>
+            <br>
+          </li>
+          <li>
+            <span style="font-size: 20px;">il bordo delle superfici di Bezier è dato dalle curve di Bezier descritte dalle poligonali che formano il bordo del poliedro di controllo.</span>
+          </li>
+        </ul>
       </div>
     </section>
     
