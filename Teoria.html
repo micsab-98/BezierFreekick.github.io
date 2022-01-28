@@ -103,29 +103,27 @@
           <br>
           <br>
           <br>
-          <span style="font-weight: 700;">Le curve di Bezier di grado 2</span> vengono anche definite <span style="font-weight: 700;">curve quadratiche</span> e <span style="font-weight: 700;">sono definite da 3 punti dello spazio affine</span> (P<span style="font-size: 0.875rem;">0</span>, P<span style="font-size: 0.875rem;">1</span> e P<span style="font-size: 0.875rem;">2</span>). Tramite tali punti è possibile costruire la curva utilizzando l'interpolazione lineare.&nbsp;<br>
+          <span style="font-weight: 700;">Le curve di Bezier di grado 2</span> vengono anche definite <span style="font-weight: 700;">curve quadratiche</span> e <span style="font-weight: 700;">sono definite da 3 punti dello spazio affine</span> (P<span style="font-size: 0.875rem;">0</span>, P<span style="font-size: 0.875rem;">1</span> e P<span style="font-size: 0.875rem;">2</span>). Tramite tali punti è possibile costruire la curva con la formula seguente:&nbsp;<br>
           <br>
           <br>
           <br>
           <span style="font-weight: 700; font-size: 1.875rem;">Algoritmo di De Castlejau</span>
           <br>
-          <br>L'algoritmo di De Casteljau ci permette di definire una curva di Bezier, sviluppando una costruzione&nbsp;attraverso ripetute interpolazioni lineari. Fissato un valore del parametro <span style="font-style: italic;">t</span> ∈ (0,1), fra ogni coppia dei punti di controllo consecutivi viene eseguita un' interpolazione lineare in funzione del parametro <span style="font-style: italic;">t</span>, ottenendo un nuovo punto della curva.<br>
-          <br>L'algoritmo viene descritto tramite un <span style="font-weight: 700;">diagramma triangolare a 3 livelli </span>.<br>
+          <br>L'algoritmo di De Casteljau ci permette di definire una curva di Bezier, sviluppando una costruzione&nbsp;attraverso ripetute interpolazioni lineari.&nbsp;<br>Quando k = 2, l’algoritmo prevede 3 livelli: al livello 0 ci sono i punti del poligono di controllo.<br>Al livello 1 ci sono due interpolazioni lineari: tra P0 e P1 e poi tra P1 e P2.<br>Al livello 2 c’è un’interpolazione linea tra le due interpolazioni lineari precedenti.<br>Il passo induttivo dell’algoritmo è il seguente:<br>
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; con <span style="font-style: italic;">r</span> = 0, ... , <span style="font-style: italic;">k&nbsp;</span> &nbsp; &nbsp; &nbsp;<span style="font-style: italic;"> i</span> = 0, ... , <span style="font-style: italic;">k</span>-<span style="font-style: italic;">r</span>
           <br>
-          <br>con r = 0, 1, ..., k&nbsp; &nbsp; &nbsp; &nbsp; i = 0, 1, ..., k-r<br>
           <br>L'algoritmo di De Casteljau ci permette di ottenere informazioni sulla curva che stiamo costruendo:<br>
           <br>
           <br>
-          <br>Discutendo nello specifico delle curve di bezier di grado 2, quando <span style="font-style: italic;">t</span> si muove tramite i punti ottenuti, descrive una curva tramite il punto P<span style="font-size: 0.875rem;">0</span>
-          <span style="font-weight: 400; font-size: 1.125rem;">
-            <span style="font-size: 1.25rem;">²</span>
-          </span>(<span style="font-style: italic;">t</span>).<br>Si può scrivere l'espressione analitica della funzione P<span style="font-size: 0.875rem;">0</span>
+          <br> Per k = 2, quando t si muove&nbsp;nell’intervallo [0,1], la curva è descritta da&nbsp;P<span style="font-size: 0.875rem;">0</span>²(<span style="font-style: italic;">t</span>).<br>Si può scrivere l'espressione analitica della funzione P<span style="font-size: 0.875rem;">0</span>
           <span style="font-size: 1.125rem;">
             <span style="font-size: 1.25rem;">²</span>
-          </span>(<span style="font-style: italic;">t</span>) (cioè la curva di Bezier) in dipendenza semplicemente dalle coordinate di partenza, cioè dai punti del poligono di controllo.&nbsp;<br>Questo meccanismo utilizza i <span style="font-weight: 700;">polinomi di Bernstein</span>.<br>
+          </span>(<span style="font-style: italic;">t</span>) (cioè la curva di Bezier) in dipendenza semplicemente ​dalle coordinate dei punti&nbsp;del&nbsp;poligono&nbsp;di controllo.&nbsp;<br>Questo meccanismo utilizza i <span style="font-weight: 700;">polinomi di Bernstein</span>.<br>
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;con <span style="font-style: italic;">i</span> = 0, ..., <span style="font-style: italic;">k</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-style: italic;">k</span> = <span style="font-style: italic;">i</span> - 1<br>
+          <br>Attraverso i polinomi di Bernstein viene definita la forma compatta delle curve di Bezier:<br>
           <br>
           <br>
-          <span style="font-weight: 400;"></span>&nbsp; &nbsp; &nbsp;<br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
+          <br>&nbsp;&nbsp;<br>Le curve di Bezier NON sono necessariamente curve regolari.<br>
           <br>Il fatto che il supporto delle curve sia contenuto nell'involucro convesso ci dice che le curve di grado 2 hanno in realtà il supporto contenuto in un piano (se P<span style="font-size: 0.875rem;">0</span>, P<span style="font-size: 0.875rem;">1</span> e P<span style="font-size: 0.875rem;">2</span> sono in posizione generale). Quindi la torsione è sempre nulla.<br>
           <br>
           <span style="font-weight: 700;">Ogni curva di Bezier di grado 2 è in realtà un arco di parabola.</span>
@@ -155,10 +153,11 @@
             </span>
           </li>
         </ul>
-        <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/CodeCogsEqn21.png" alt="" data-image-width="395" data-image-height="141">
-        <img class="u-expanded-width-xs u-image u-image-default u-preserve-proportions u-image-3" src="images/CodeCogsEqn9.png" alt="" data-image-width="771" data-image-height="50">
-        <img class="u-image u-image-default u-image-4" src="images/CodeCogsEqn17.png" alt="" data-image-width="1096" data-image-height="56">
-        <img class="u-image u-image-default u-preserve-proportions u-image-5" src="images/CodeCogsEqn162.png" alt="" data-image-width="736" data-image-height="59">
+        <img class="u-expanded-width-xs u-image u-image-default u-preserve-proportions u-image-2" src="images/CodeCogsEqn9.png" alt="" data-image-width="771" data-image-height="50">
+        <img class="u-image u-image-default u-image-3" src="images/CodeCogsEqn17.png" alt="" data-image-width="1096" data-image-height="56">
+        <img class="u-image u-image-default u-preserve-proportions u-image-4" src="images/CodeCogsEqn162.png" alt="" data-image-width="736" data-image-height="59">
+        <img class="u-image u-image-default u-image-5" src="images/CodeCogsEqn19.png" alt="" data-image-width="533" data-image-height="120">
+        <img class="u-image u-image-default u-preserve-proportions u-image-6" src="images/CodeCogsEqn201.png" alt="" data-image-width="404" data-image-height="143">
       </div>
     </section>
     <section class="u-align-left u-clearfix u-section-4" id="carousel_ac91">
@@ -254,6 +253,16 @@
         <p class="u-align-center u-small-text u-text u-text-variant u-text-1">Michele Saba - michele.saba@studenti.unimi.it<br>Geometria Computazionale - AA 2021/22<br>Docente: Professor Alberto Alzati<br>Università degli Studi di Milano - UNIMI
         </p>
       </div></footer>
-    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
   </body>
 </html>
